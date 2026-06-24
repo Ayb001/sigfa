@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class GuichetSessionService
 {
+    public function __construct(private FcmService $fcm) {}
+
     public function open(User $employee, int $queueId): GuichetSession
     {
         $queue = Queue::where('id', $queueId)
@@ -83,15 +85,6 @@ class GuichetSessionService
             throw new ModelNotFoundException('Aucun ticket en attente.');
         }
 
-        // Update positions of remaining tickets
-        Ticket::where('queue_id', $session->queue_id)
-            ->where('tenant_id', $session->tenant_id)
-            ->where('status', 'waiting')
-            ->where('id', '!=', $next->id)
-            ->orderBy('created_at')
-            ->get()
-            ->each(fn ($t, $i) => $t->update(['position' => $i + 1]));
-
         $next->update([
             'status'             => 'called',
             'called_at'          => now(),
@@ -99,7 +92,34 @@ class GuichetSessionService
             'idle_time_seconds'  => $idleSeconds,
         ]);
 
-        return $next->load('client');
+        $next->load(['client', 'queue']);
+
+        // FCM: notify the called client
+        if ($next->client?->fcm_token) {
+            $this->fcm->notifyTicketCalled(
+                $next->client->fcm_token,
+                $next->ticket_number,
+                $next->queue->name,
+            );
+        }
+
+        // FCM: "approaching" notification for the new first-in-line ticket
+        $approaching = Ticket::where('queue_id', $session->queue_id)
+            ->where('tenant_id', $session->tenant_id)
+            ->where('status', 'waiting')
+            ->orderByRaw("FIELD(priority, 'priority', 'normal')")
+            ->orderBy('created_at')
+            ->with('client')
+            ->first();
+
+        if ($approaching?->client?->fcm_token) {
+            $this->fcm->notifyTicketApproaching(
+                $approaching->client->fcm_token,
+                $approaching->ticket_number,
+            );
+        }
+
+        return $next;
     }
 
     public function markServed(Ticket $ticket, GuichetSession $session): Ticket

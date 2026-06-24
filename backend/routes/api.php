@@ -4,12 +4,14 @@ use App\Http\Controllers\Auth\ClientAuthController;
 use App\Http\Controllers\Auth\StaffAuthController;
 use App\Http\Controllers\Agent\GuichetSessionController;
 use App\Http\Controllers\Client\EnterpriseDirectoryController;
+use App\Http\Controllers\Client\NewsController;
 use App\Http\Controllers\Client\TicketController;
 use App\Http\Controllers\EnterpriseAdmin\BranchController;
 use App\Http\Controllers\EnterpriseAdmin\ClientListController;
 use App\Http\Controllers\EnterpriseAdmin\DashboardController;
 use App\Http\Controllers\EnterpriseAdmin\EmployeeController;
 use App\Http\Controllers\EnterpriseAdmin\EnterpriseProfileController;
+use App\Http\Controllers\EnterpriseAdmin\PredictionController;
 use App\Http\Controllers\EnterpriseAdmin\QueueController;
 use App\Http\Controllers\EnterpriseAdmin\ReportController;
 use App\Http\Controllers\SuperAdmin\EnterpriseController;
@@ -49,6 +51,9 @@ Route::prefix('directory')->group(function () {
     Route::get('enterprises/{enterprise}/branches',                    [EnterpriseDirectoryController::class, 'branches']);
     Route::get('enterprises/{enterprise}/branches/{branch}/queues',    [EnterpriseDirectoryController::class, 'queues']);
 });
+
+// ─── News (public — no auth needed while waiting) ─────────────────────────────
+Route::get('news/{category?}', [NewsController::class, 'index']);
 
 // ─── Authenticated client ──────────────────────────────────────────────────────
 Route::prefix('client')->middleware('auth.client')->group(function () {
@@ -100,6 +105,9 @@ Route::prefix('enterprise')->middleware(['auth.staff', 'role:enterprise_admin', 
     Route::get('reports/export/pdf',           [ReportController::class, 'exportPdf']);
     Route::get('reports/export/excel',         [ReportController::class, 'exportExcel']);
     Route::get('reports/export/performance-pdf', [ReportController::class, 'exportPerformancePdf']);
+
+    // AI predictions
+    Route::get('predictions/tomorrow', [PredictionController::class, 'tomorrow']);
 
     // SSE: live sessions monitor
     Route::get('stream/sessions', [QueueStreamController::class, 'adminStream']);
