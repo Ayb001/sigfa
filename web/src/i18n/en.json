@@ -1,0 +1,175 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "loading": "Loading…",
+    "error": "An error occurred",
+    "success": "Operation successful",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "status": "Status",
+    "actions": "Actions",
+    "active": "Active",
+    "inactive": "Inactive",
+    "all": "All",
+    "noData": "No data available",
+    "yes": "Yes",
+    "no": "No",
+    "from": "From",
+    "to": "To",
+    "export": "Export",
+    "filter": "Filter"
+  },
+  "auth": {
+    "login": "Sign in",
+    "logout": "Sign out",
+    "email": "Email address",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "loginTitle": "Sign in to SIGFA",
+    "loginSubtitle": "Queue management platform",
+    "invalidCredentials": "Invalid credentials"
+  },
+  "language": {
+    "select": "Choose language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "roles": {
+    "super_admin": "Super Admin",
+    "enterprise_admin": "Enterprise Admin",
+    "employee": "Employee / Agent"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "enterprises": "Enterprises",
+    "branches": "Branches",
+    "employees": "Employees",
+    "queues": "Queues",
+    "reports": "Reports",
+    "settings": "Settings",
+    "profile": "Profile",
+    "users": "Users",
+    "sessions": "Active sessions",
+    "mySession": "My desk"
+  },
+  "enterprise": {
+    "name": "Enterprise name",
+    "sector": "Sector",
+    "sectors": {
+      "banque": "Banking",
+      "hopital": "Hospital",
+      "administration": "Administration",
+      "autre": "Other"
+    },
+    "logo": "Logo",
+    "address": "Address",
+    "city": "City",
+    "contactEmail": "Contact email",
+    "contactPhone": "Contact phone",
+    "defaultLanguage": "Default language",
+    "status": {
+      "pending": "Pending",
+      "active": "Active",
+      "suspended": "Suspended"
+    },
+    "approve": "Approve",
+    "suspend": "Suspend",
+    "addEnterprise": "Add enterprise",
+    "editEnterprise": "Edit enterprise"
+  },
+  "branch": {
+    "name": "Branch name",
+    "address": "Address",
+    "city": "City",
+    "phone": "Phone",
+    "openingHours": "Opening hours",
+    "addBranch": "Add branch",
+    "editBranch": "Edit branch"
+  },
+  "employee": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "branch": "Assigned branch",
+    "addEmployee": "Add employee",
+    "editEmployee": "Edit employee"
+  },
+  "queue": {
+    "name": "Queue name",
+    "branch": "Branch",
+    "prefix": "Ticket prefix",
+    "avgServiceTime": "Avg. service time (min)",
+    "priorityRules": "Priority rules",
+    "openingHours": "Availability hours",
+    "addQueue": "Add queue",
+    "editQueue": "Edit queue",
+    "waitingCount": "Waiting",
+    "estimatedWait": "Est. wait"
+  },
+  "ticket": {
+    "number": "Ticket #",
+    "status": {
+      "waiting": "Waiting",
+      "called": "Called",
+      "served": "Served",
+      "skipped": "Skipped",
+      "cancelled": "Cancelled"
+    },
+    "priority": {
+      "normal": "Normal",
+      "priority": "Priority"
+    }
+  },
+  "session": {
+    "open": "Open my desk",
+    "close": "Close my desk",
+    "pause": "Pause",
+    "resume": "Resume",
+    "callNext": "Call next",
+    "markServed": "Done",
+    "skip": "Skip",
+    "currentTicket": "Current ticket",
+    "noSession": "No active session",
+    "selectQueue": "Select a queue",
+    "status": {
+      "active": "Active",
+      "paused": "Paused",
+      "ended": "Ended"
+    },
+    "servedToday": "Served today",
+    "duration": "Duration",
+    "noTickets": "No tickets waiting"
+  },
+  "dashboard": {
+    "totalTickets": "Tickets today",
+    "servedToday": "Served",
+    "waitingNow": "Waiting now",
+    "avgWait": "Avg. wait",
+    "activeQueues": "Active queues",
+    "activeSessions": "Active sessions",
+    "totalEmployees": "Employees",
+    "ticketsByHour": "Tickets by hour",
+    "employeePerformance": "Agent performance",
+    "activeSessions_title": "Live sessions"
+  },
+  "report": {
+    "title": "Reports & Exports",
+    "dateFrom": "From date",
+    "dateTo": "To date",
+    "branch": "Branch",
+    "queue": "Queue",
+    "type": "Export type",
+    "pdf": "PDF",
+    "excel": "Excel",
+    "generate": "Generate report"
+  }
+}

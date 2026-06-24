@@ -1,0 +1,175 @@
+{
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "search": "Rechercher",
+    "loading": "Chargement…",
+    "error": "Une erreur est survenue",
+    "success": "Opération réussie",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "status": "Statut",
+    "actions": "Actions",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "all": "Tous",
+    "noData": "Aucune donnée disponible",
+    "yes": "Oui",
+    "no": "Non",
+    "from": "Du",
+    "to": "Au",
+    "export": "Exporter",
+    "filter": "Filtrer"
+  },
+  "auth": {
+    "login": "Se connecter",
+    "logout": "Se déconnecter",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "loginTitle": "Connexion à SIGFA",
+    "loginSubtitle": "Plateforme de gestion de file d'attente",
+    "invalidCredentials": "Identifiants invalides"
+  },
+  "language": {
+    "select": "Choisir la langue",
+    "fr": "Français",
+    "en": "English"
+  },
+  "roles": {
+    "super_admin": "Super Administrateur",
+    "enterprise_admin": "Administrateur d'Entreprise",
+    "employee": "Employé / Agent"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "enterprises": "Entreprises",
+    "branches": "Agences",
+    "employees": "Employés",
+    "queues": "Files d'attente",
+    "reports": "Rapports",
+    "settings": "Paramètres",
+    "profile": "Profil",
+    "users": "Utilisateurs",
+    "sessions": "Sessions en cours",
+    "mySession": "Mon guichet"
+  },
+  "enterprise": {
+    "name": "Nom de l'entreprise",
+    "sector": "Secteur d'activité",
+    "sectors": {
+      "banque": "Banque",
+      "hopital": "Hôpital",
+      "administration": "Administration",
+      "autre": "Autre"
+    },
+    "logo": "Logo",
+    "address": "Adresse",
+    "city": "Ville",
+    "contactEmail": "E-mail de contact",
+    "contactPhone": "Téléphone de contact",
+    "defaultLanguage": "Langue par défaut",
+    "status": {
+      "pending": "En attente",
+      "active": "Active",
+      "suspended": "Suspendue"
+    },
+    "approve": "Approuver",
+    "suspend": "Suspendre",
+    "addEnterprise": "Ajouter une entreprise",
+    "editEnterprise": "Modifier l'entreprise"
+  },
+  "branch": {
+    "name": "Nom de l'agence",
+    "address": "Adresse",
+    "city": "Ville",
+    "phone": "Téléphone",
+    "openingHours": "Horaires d'ouverture",
+    "addBranch": "Ajouter une agence",
+    "editBranch": "Modifier l'agence"
+  },
+  "employee": {
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "password": "Mot de passe",
+    "branch": "Agence assignée",
+    "addEmployee": "Ajouter un employé",
+    "editEmployee": "Modifier l'employé"
+  },
+  "queue": {
+    "name": "Nom de la file",
+    "branch": "Agence",
+    "prefix": "Préfixe ticket",
+    "avgServiceTime": "Temps de service moyen (min)",
+    "priorityRules": "Règles de priorité",
+    "openingHours": "Horaires de disponibilité",
+    "addQueue": "Ajouter une file d'attente",
+    "editQueue": "Modifier la file d'attente",
+    "waitingCount": "En attente",
+    "estimatedWait": "Attente estimée"
+  },
+  "ticket": {
+    "number": "N° Ticket",
+    "status": {
+      "waiting": "En attente",
+      "called": "Appelé",
+      "served": "Servi",
+      "skipped": "Passé",
+      "cancelled": "Annulé"
+    },
+    "priority": {
+      "normal": "Normal",
+      "priority": "Prioritaire"
+    }
+  },
+  "session": {
+    "open": "Ouvrir mon guichet",
+    "close": "Fermer mon guichet",
+    "pause": "Mettre en pause",
+    "resume": "Reprendre",
+    "callNext": "Appeler le prochain",
+    "markServed": "Terminer",
+    "skip": "Passer",
+    "currentTicket": "Ticket en cours",
+    "noSession": "Aucune session active",
+    "selectQueue": "Sélectionner une file d'attente",
+    "status": {
+      "active": "Active",
+      "paused": "En pause",
+      "ended": "Terminée"
+    },
+    "servedToday": "Servis aujourd'hui",
+    "duration": "Durée",
+    "noTickets": "Aucun ticket en attente"
+  },
+  "dashboard": {
+    "totalTickets": "Tickets aujourd'hui",
+    "servedToday": "Servis",
+    "waitingNow": "En attente",
+    "avgWait": "Attente moy.",
+    "activeQueues": "Files actives",
+    "activeSessions": "Sessions actives",
+    "totalEmployees": "Employés",
+    "ticketsByHour": "Tickets par heure",
+    "employeePerformance": "Performance des agents",
+    "activeSessions_title": "Sessions en cours"
+  },
+  "report": {
+    "title": "Rapports & Exports",
+    "dateFrom": "Date début",
+    "dateTo": "Date fin",
+    "branch": "Agence",
+    "queue": "File d'attente",
+    "type": "Type d'export",
+    "pdf": "PDF",
+    "excel": "Excel",
+    "generate": "Générer le rapport"
+  }
+}
